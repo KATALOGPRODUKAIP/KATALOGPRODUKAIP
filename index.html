@@ -1,164 +1,868 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Katalog Produk AIP</title>
 
     <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
+        * {
+            box-sizing: border-box;
         }
 
-        .container {
-            max-width: 900px;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .topbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e8edf3;
+            padding: 16px 20px;
+        }
+
+        .topbar-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0c4a78, #1681b8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(12, 74, 120, 0.22);
+        }
+
+        .brand-text strong {
+            display: block;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text span {
+            display: block;
+            margin-top: 3px;
+            font-size: 11px;
+            color: #7b8798;
+        }
+
+        .topbar-label {
+            font-size: 12px;
+            color: #7b8798;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                radial-gradient(circle at 85% 20%, rgba(255,255,255,0.16), transparent 25%),
+                linear-gradient(135deg, #0b416b, #126da2 55%, #1689b9);
+
+            color: white;
+            padding: 60px 20px 70px;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
             margin: auto;
         }
 
-        .header {
+        .hero-label {
+            display: inline-block;
+            padding: 7px 13px;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.10);
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            max-width: 750px;
+            font-size: 42px;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 17px 0 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.86);
+        }
+
+
+        /* =========================
+           STATISTIK
+        ========================= */
+
+        .stats {
+            max-width: 1100px;
+            margin: -30px auto 0;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .stats-box {
             background: white;
-            padding: 30px 20px;
+            border-radius: 18px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            box-shadow: 0 12px 35px rgba(15, 35, 60, 0.10);
+            border: 1px solid #edf1f5;
+        }
+
+        .stat {
             text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+            border-right: 1px solid #edf1f5;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 25px;
+            color: #0d5688;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #7b8798;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 45px 20px 50px;
+        }
+
+        .section-heading {
+            text-align: center;
             margin-bottom: 25px;
         }
 
-        .header h1 {
-            margin: 0 0 10px;
-            font-size: 30px;
+        .section-heading h2 {
+            margin: 0;
+            font-size: 27px;
+            letter-spacing: -0.4px;
         }
 
-        .header p {
-            margin: 0;
-            color: #666;
+        .section-heading p {
+            margin: 9px 0 0;
+            color: #7b8798;
+            font-size: 14px;
         }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 16px 20px 16px 48px;
+            border: 1px solid #dce3eb;
+            background: white;
+            border-radius: 13px;
+            font-size: 14px;
+            outline: none;
+            box-shadow: 0 5px 20px rgba(20,40,70,0.05);
+        }
+
+        .search input:focus {
+            border-color: #1681b8;
+            box-shadow: 0 0 0 4px rgba(22,129,184,0.10);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8995a5;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           KATALOG GRID
+        ========================= */
 
         .katalog {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
+
+        /* =========================
+           KARTU
+        ========================= */
+
         .kartu {
+            position: relative;
             background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.10);
+            border: 1px solid #e7ecf2;
+            border-radius: 17px;
+            padding: 24px;
+            min-height: 205px;
+            box-shadow: 0 5px 20px rgba(20,40,70,0.05);
+            transition: all 0.25s ease;
+            overflow: hidden;
+        }
+
+        .kartu::after {
+            content: "";
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(22,129,184,0.05);
+            right: -30px;
+            top: -30px;
+        }
+
+        .kartu:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(20,40,70,0.11);
+            border-color: #d5e4ef;
+        }
+
+        .nomor {
+            font-size: 11px;
+            font-weight: bold;
+            color: #9aa6b5;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
         }
 
         .kartu h3 {
             margin: 0 0 8px;
-            font-size: 20px;
+            font-size: 19px;
+            letter-spacing: 0.2px;
         }
 
         .kartu p {
-            margin: 0 0 15px;
-            color: #666;
-            font-size: 14px;
+            margin: 0 0 20px;
+            color: #7b8798;
+            font-size: 13px;
         }
 
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #788493;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #c8d0d9;
+        }
+
+        .status-aktif {
+            color: #087449;
+        }
+
+        .status-aktif .status-dot {
+            background: #18a66a;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
         .tombol {
-            display: inline-block;
-            padding: 10px 18px;
-            background: #1f5fbf;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 17px;
+            background: #116b9f;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s ease;
         }
 
         .tombol:hover {
-            background: #164a96;
+            background: #0b527d;
+            transform: translateY(-1px);
         }
 
-        .footer {
+        .arrow {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #112333;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: auto;
             text-align: center;
-            color: #888;
-            font-size: 13px;
-            margin-top: 30px;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .footer-text {
+            margin-top: 8px;
+            color: #9eacba;
+            font-size: 12px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 17px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #778695;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                padding: 45px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .katalog {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 560px) {
+
+            .topbar-label {
+                display: none;
+            }
+
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .hero {
+                padding: 40px 18px 55px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .stats {
+                padding: 0 14px;
+            }
+
+            .stats-box {
+                padding: 16px 8px;
+            }
+
+            .stat strong {
+                font-size: 21px;
+            }
+
+            .stat span {
+                font-size: 10px;
+            }
+
+            .container {
+                padding: 35px 14px 40px;
+            }
+
+            .section-heading h2 {
+                font-size: 23px;
+            }
+
+            .katalog {
+                grid-template-columns: 1fr;
+                gap: 13px;
+            }
+
+            .kartu {
+                min-height: auto;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="container">
 
-    <div class="header">
-        <h1>Katalog Produk AIP</h1>
-        <p>Katalog Produk Ardhana Indo Putra</p>
+    <!-- =========================
+         TOPBAR
+    ========================== -->
+
+    <div class="topbar">
+
+        <div class="topbar-inner">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    AIP
+                </div>
+
+                <div class="brand-text">
+                    <strong>Ardhana Indo Putra</strong>
+                    <span>Katalog Produk</span>
+                </div>
+
+            </div>
+
+            <div class="topbar-label">
+                PRODUCT CATALOG
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="katalog">
 
-        <!-- FAYAKA -->
-        <div class="kartu">
-            <h3>FAYAKA</h3>
-            <p>Produk FAYAKA</p>
-            <a class="tombol" href="#">
-                Lihat Produk
-            </a>
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-inner">
+
+            <div class="hero-label">
+                KATALOG PRODUK AIP
+            </div>
+
+            <h1>
+                Temukan produk yang Anda butuhkan.
+            </h1>
+
+            <p>
+                Jelajahi berbagai produk berdasarkan merek
+                dan temukan informasi produk secara lebih mudah
+                melalui katalog digital AIP.
+            </p>
+
         </div>
 
-        <!-- YOHANNA -->
-        <div class="kartu">
-            <h3>YOHANNA</h3>
-            <p>Produk YOHANNA</p>
-            <a class="tombol" href="#">
-                Lihat Produk
-            </a>
+    </section>
+
+
+    <!-- =========================
+         STATISTIK
+    ========================== -->
+
+    <div class="stats">
+
+        <div class="stats-box">
+
+            <div class="stat">
+                <strong>10</strong>
+                <span>Merek Produk</span>
+            </div>
+
+            <div class="stat">
+                <strong>01</strong>
+                <span>Katalog Digital</span>
+            </div>
+
+            <div class="stat">
+                <strong>24/7</strong>
+                <span>Akses Informasi</span>
+            </div>
+
         </div>
 
-        <!-- IBUNDA -->
-        <div class="kartu">
-            <h3>IBUNDA</h3>
-            <p>Produk IBUNDA</p>
-            <a class="tombol" href="#">
-                Lihat Produk
-            </a>
+    </div>
+
+
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
+    <main class="container">
+
+        <div class="section-heading">
+
+            <h2>Pilih Merek</h2>
+
+            <p>
+                Pilih merek untuk melihat katalog produk
+            </p>
+
         </div>
 
-        <!-- ARDHA MEDICA -->
-        <div class="kartu">
-            <h3>ARDHA MEDICA</h3>
-            <p>Produk ARDHA MEDICA</p>
-            <a class="tombol" href="#">
-                Lihat Produk
-            </a>
+
+        <!-- SEARCH -->
+
+        <div class="search">
+
+            <span class="search-icon">⌕</span>
+
+            <input
+                type="text"
+                id="pencarian"
+                placeholder="Cari merek produk..."
+                onkeyup="cariMerek()"
+            >
+
         </div>
 
-        <!-- BINDA -->
-        <div class="kartu">
-            <h3>BINDA</h3>
-            <p>Produk BINDA</p>
-            <a class="tombol" href="#">
-                Lihat Produk
-            </a>
+
+        <!-- =========================
+             KATALOG
+        ========================== -->
+
+        <div class="katalog" id="daftarMerek">
+
+
+            <!-- 01 -->
+
+            <div class="kartu">
+
+                <div class="nomor">01</div>
+
+                <h3>FAYAKA</h3>
+
+                <p>Produk FAYAKA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="kartu">
+
+                <div class="nomor">02</div>
+
+                <h3>YOHANNA</h3>
+
+                <p>Produk YOHANNA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="kartu">
+
+                <div class="nomor">03</div>
+
+                <h3>IBUNDA</h3>
+
+                <p>Produk IBUNDA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="kartu">
+
+                <div class="nomor">04</div>
+
+                <h3>ARDHA MEDICA</h3>
+
+                <p>Produk ARDHA MEDICA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="kartu">
+
+                <div class="nomor">05</div>
+
+                <h3>BINDA</h3>
+
+                <p>Produk BINDA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="kartu">
+
+                <div class="nomor">06</div>
+
+                <h3>BUNDA</h3>
+
+                <p>Produk BUNDA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 07 - BUNDA BIRU -->
+
+            <div class="kartu">
+
+                <div class="nomor">07</div>
+
+                <h3>BUNDA BIRU</h3>
+
+                <p>Produk BUNDA BIRU</p>
+
+                <a
+                    class="tombol"
+                    href="bunda-biru/index.html"
+                >
+                    Lihat Produk
+                    <span class="arrow">→</span>
+                </a>
+
+                <div
+                    class="status status-aktif"
+                    style="margin-top: 15px;"
+                >
+                    <span class="status-dot"></span>
+                    Katalog tersedia
+                </div>
+
+            </div>
+
+
+            <!-- 08 -->
+
+            <div class="kartu">
+
+                <div class="nomor">08</div>
+
+                <h3>BUNDA HUSADA</h3>
+
+                <p>Produk BUNDA HUSADA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 09 -->
+
+            <div class="kartu">
+
+                <div class="nomor">09</div>
+
+                <h3>BUNDA MEDICA</h3>
+
+                <p>Produk BUNDA MEDICA</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
+            <!-- 10 -->
+
+            <div class="kartu">
+
+                <div class="nomor">10</div>
+
+                <h3>KASA BARU</h3>
+
+                <p>Produk KASA BARU</p>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Segera hadir
+                </div>
+
+            </div>
+
+
         </div>
 
-        <!-- BUNDA -->
-        <div class="kartu">
-            <h3>BUNDA</h3>
-            <p>Produk BUNDA</p>
-            <a class="tombol" href="#">
-                Lihat Produk
-            </a>
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-title">
+                ARDHANA INDO PUTRA
+            </div>
+
+            <div class="footer-text">
+                Katalog Produk Digital
+            </div>
+
+            <div class="copyright">
+                © 2026 Ardhana Indo Putra. All rights reserved.
+            </div>
+
         </div>
 
-        <!-- BUNDA BIRU -->
-        <div class="kartu">
-            <h3>BUNDA BIRU</h3>
-            <p>Produk BUNDA BIRU</p>
-            <a class="tombol" href="bunda-biru/index.html">
-                Lihat Produk
-            </a>
-        </div>
+    </footer>
 
-        <!-- BUNDA HUSADA
-```
+
+    <!-- =========================
+         SEARCH SCRIPT
+    ========================== -->
+
+    <script>
+
+        function cariMerek() {
+
+            let input =
+                document
+                .getElementById("pencarian")
+                .value
+                .toLowerCase();
+
+            let kartu =
+                document
+                .getElementById("daftarMerek")
+                .getElementsByClassName("kartu");
+
+            for (let i = 0; i < kartu.length; i++) {
+
+                let nama =
+                    kartu[i]
+                    .getElementsByTagName("h3")[0]
+                    .innerText
+                    .toLowerCase();
+
+                if (nama.includes(input)) {
+
+                    kartu[i].style.display = "";
+
+                } else {
+
+                    kartu[i].style.display = "none";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

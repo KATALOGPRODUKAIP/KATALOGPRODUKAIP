@@ -1,78 +1,76 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasa Lipat - Bunda Biru</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            background: #ffffff;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: #222;
-        }
+  <title></title>
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 25px auto;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        .judul {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
 
-        .kode {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
+    .produk {
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+    }
 
-        .kembali {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #1f5fbf;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 15px;
-        }
+    .produk img {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      display: block;
+      margin: 0 auto 25px;
+      border-radius: 8px;
+    }
 
-        .kembali:hover {
-            background: #164a96;
-        }
-    </style>
+    .tombol {
+      display: inline-block;
+      padding: 11px 22px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .tombol:hover {
+      opacity: 0.85;
+    }
+  </style>
 </head>
 
 <body>
 
-    <img src="../../gambar-web/bunda-biru/07. 06. BUNDA BIRU LIPAT 1.jpg"
-         alt="Bunda Biru Kasa Lipat">
+  <div class="produk">
 
-    <div class="judul">
-        Kasa Lipat
-    </div>
+    <img
+      src="../../gambar-web/bunda-biru/200703001.jpg"
+      alt="Kasa Hidrofil Lipat"
+    >
 
-    <div class="kode">
-        200703001<br>
-        200703002<br>
-        200703003<br>
-        200703004<br>
-        200703005<br>
-        200703006
-    </div>
-
-    <a class="kembali" href="../index.html">
-        ← Kembali ke Bunda Biru
+    <a
+      class="tombol"
+      href="../index.html"
+    >
+      ← Katalog Bunda Biru
     </a>
+
+  </div>
 
 </body>
 </html>
-```

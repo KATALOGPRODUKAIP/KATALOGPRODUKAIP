@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BUNDA</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 10px 0 35px;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 130px;
+      padding: 20px;
+      background: white;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #222;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 700px) {
+      .menu {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>BUNDA</h1>
+
+    <div class="menu">
+
+      <a class="card" href="roll/">
+        Kasa Hidrofil Roll
+      </a>
+
+      <a class="card" href="perban/">
+        Kasa Hidrofil Perban
+      </a>
+
+      <a class="card" href="kasa-lipat/">
+        Kasa Hidrofil Lipat
+      </a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
